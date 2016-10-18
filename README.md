@@ -1,7 +1,7 @@
 # docker-ruby-ci
 
-Dockerfile for CI (continuous integration) based on Alpine Linux with:
+Dockerfile for CI (continuous integration) based on official ruby:2.3 docker image with:
 
 * ruby (2.3.1)
-* nodejs (6.2.0)
+* nodejs (4.6.0)
 * phantomjs (2.1.1)

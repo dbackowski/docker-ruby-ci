@@ -1,18 +1,22 @@
-FROM alpine:3.4
-MAINTAINER Damian Baćkowski "damianbackowski@gmail.com"
+FROM ruby:2.3
+MAINTAINER Damian Baćkowski <damianbackowski@gmail.com>
 
-RUN apk update
-RUN apk upgrade
-RUN apk add curl wget bash
-RUN apk add ruby ruby-bundler
-RUN apk add nodejs
-RUN apk add --no-cache fontconfig
+ENV PHANTOMJS_VERSION 2.1.1
+ENV NODE_VERSION 4.6.0
 
-RUN rm -rf /var/cache/apk/*
+RUN apt-get update && apt-get install locales -yqq
+RUN echo "en_US UTF-8" > /etc/locale.gen
+RUN locale-gen en_US.UTF-8
+RUN gem install bundler --no-rdoc --no-ri
 
-RUN mkdir -p /usr/share && \
-    cd /usr/share \
-    && curl -L https://github.com/Overbryd/docker-phantomjs-alpine/releases/download/2.11/phantomjs-alpine-x86_64.tar.bz2 | tar xj \
-    && ln -s /usr/share/phantomjs/phantomjs /usr/bin/phantomjs
+RUN mkdir -p /srv/var && \
+    curl -sSLO "https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-$PHANTOMJS_VERSION-linux-x86_64.tar.bz2" && \
+    tar -xjf "phantomjs-$PHANTOMJS_VERSION-linux-x86_64.tar.bz2" -C "/tmp" && \
+    rm -f "phantomjs-$PHANTOMJS_VERSION-linux-x86_64.tar.bz2" && \
+    mv "/tmp/phantomjs-$PHANTOMJS_VERSION-linux-x86_64/" /srv/var/phantomjs && \
+    ln -s /srv/var/phantomjs/bin/phantomjs /usr/bin/phantomjs
 
-RUN ruby --version && node --version && phantomjs --version
+RUN curl -sSLO "https://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-x64.tar.xz" && \
+    tar -xJf "node-v$NODE_VERSION-linux-x64.tar.xz" -C /usr/local --strip-components=1 && \
+    rm -f "node-v$NODE_VERSION-linux-x64.tar.xz" && \
+    npm install npm -g
