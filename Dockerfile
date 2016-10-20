@@ -7,6 +7,12 @@ ENV NODE_VERSION 4.6.0
 RUN apt-get update && apt-get install locales -yqq
 RUN echo "en_US UTF-8" > /etc/locale.gen
 RUN locale-gen en_US.UTF-8
+
+ENV LANG en_US.UTF-8
+ENV LANGUAGE en_US:en
+ENV LC_ALL en_US.UTF-8
+
+RUN rm /etc/localtime && ln -s /usr/share/zoneinfo/Europe/Warsaw /etc/localtime
 RUN gem install bundler --no-rdoc --no-ri
 
 RUN mkdir -p /srv/var && \
