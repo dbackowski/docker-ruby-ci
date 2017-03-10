@@ -4,7 +4,7 @@ Dockerfile for CI (continuous integration) based on official ruby:2.3 docker ima
 
 ## What is included?
 
-* ruby (2.3.3)
+* ruby (2.3.1)
 * nodejs (4.6.0)
 * phantomjs (2.1.1)
 
@@ -19,5 +19,5 @@ Timezone: Europe/Warsaw
 ## Usage 
 
 ```
-docker run damianbackowski/ruby-ci:2.3.3 [cmd]
+docker run damianbackowski/ruby-ci:2.3.1 [cmd]
 ```
