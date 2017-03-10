@@ -1,11 +1,11 @@
 # docker-ruby-ci
 
-Dockerfile for CI (continuous integration) based on official ruby:2.3 docker image.
+Dockerfile for CI (continuous integration) based on official ruby:2.4 docker image.
 
 ## What is included?
 
-* ruby (2.3.1)
-* nodejs (4.6.0)
+* ruby (2.4.0)
+* nodejs (6.10.0)
 * phantomjs (2.1.1)
 
 Locale:
@@ -19,5 +19,5 @@ Timezone: Europe/Warsaw
 ## Usage 
 
 ```
-docker run damianbackowski/ruby-ci:2.3.1 [cmd]
+docker run damianbackowski/ruby-ci:2.4.0 [cmd]
 ```
