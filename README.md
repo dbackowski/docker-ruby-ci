@@ -4,8 +4,8 @@ Dockerfile for CI (continuous integration) based on official ruby:2.4 docker ima
 
 ## What is included?
 
-* ruby (2.4.0)
-* nodejs (6.10.0)
+* ruby (2.4.1)
+* nodejs (6.10.1)
 * phantomjs (2.1.1)
 
 Locale:
@@ -19,5 +19,5 @@ Timezone: Europe/Warsaw
 ## Usage 
 
 ```
-docker run damianbackowski/ruby-ci:2.4.0 [cmd]
+docker run damianbackowski/ruby-ci:2.4.1 [cmd]
 ```

@@ -1,8 +1,8 @@
-FROM ruby:2.4.0
+FROM ruby:2.4.1
 MAINTAINER Damian Baćkowski <damianbackowski@gmail.com>
 
 ENV PHANTOMJS_VERSION 2.1.1
-ENV NODE_VERSION 6.10.0
+ENV NODE_VERSION 6.10.1
 
 RUN apt-get update && apt-get install locales -yqq
 RUN echo "en_US UTF-8" > /etc/locale.gen
