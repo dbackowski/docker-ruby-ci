@@ -2,7 +2,8 @@ FROM ruby:2.4.1
 MAINTAINER Damian Baćkowski <damianbackowski@gmail.com>
 
 ENV PHANTOMJS_VERSION 2.1.1
-ENV NODE_VERSION 6.10.3
+ENV CHROME_PACKAGE="google-chrome-stable_59.0.3071.115-1_amd64.deb"
+ENV NODE_VERSION 6.11.0
 
 RUN apt-get update && apt-get install locales -yqq
 RUN echo "en_US UTF-8" > /etc/locale.gen
@@ -20,7 +21,12 @@ RUN mkdir -p /srv/var && \
     tar -xjf "phantomjs-$PHANTOMJS_VERSION-linux-x86_64.tar.bz2" -C "/tmp" && \
     rm -f "phantomjs-$PHANTOMJS_VERSION-linux-x86_64.tar.bz2" && \
     mv "/tmp/phantomjs-$PHANTOMJS_VERSION-linux-x86_64/" /srv/var/phantomjs && \
-    ln -s /srv/var/phantomjs/bin/phantomjs /usr/bin/phantomjs
+    ln -s /srv/var/phantomjs/bin/phantomjs /usr/bin/phantomjs && \
+    wget https://github.com/webnicer/chrome-downloads/raw/master/x64.deb/${CHROME_PACKAGE} && \
+    dpkg --unpack ${CHROME_PACKAGE} && \
+    apt-get install -f -y && \
+    apt-get clean && \
+    rm ${CHROME_PACKAGE}
 
 RUN curl -sSLO "https://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-x64.tar.xz" && \
     tar -xJf "node-v$NODE_VERSION-linux-x64.tar.xz" -C /usr/local --strip-components=1 && \
