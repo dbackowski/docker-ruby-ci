@@ -4,8 +4,9 @@ MAINTAINER Damian Baćkowski <damianbackowski@gmail.com>
 ENV PHANTOMJS_VERSION 2.1.1
 ENV CHROME_PACKAGE="google-chrome-stable_59.0.3071.115-1_amd64.deb"
 ENV NODE_VERSION 6.11.0
+ENV DBUS_SESSION_BUS_ADDRESS=/dev/null
 
-RUN apt-get update && apt-get install locales -yqq
+RUN apt-get update && apt-get install locales xvfb -yqq
 RUN echo "en_US UTF-8" > /etc/locale.gen
 RUN locale-gen en_US.UTF-8
 

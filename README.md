@@ -4,6 +4,7 @@ Dockerfile for CI (continuous integration) based on official ruby:2.4 docker ima
 
 ## What is included?
 
+* xvfb
 * ruby (2.4.1)
 * nodejs (6.11.0)
 * phantomjs (2.1.1)
