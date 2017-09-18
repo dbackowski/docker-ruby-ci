@@ -2,8 +2,9 @@ FROM ruby:2.4.1
 MAINTAINER Damian Baćkowski <damianbackowski@gmail.com>
 
 ENV PHANTOMJS_VERSION 2.1.1
-ENV CHROME_PACKAGE="google-chrome-stable_59.0.3071.115-1_amd64.deb"
-ENV NODE_VERSION 6.11.0
+
+ENV CHROME_PACKAGE="google-chrome-stable_61.0.3163.91-1_amd64.deb"
+ENV NODE_VERSION 6.11.3
 ENV DBUS_SESSION_BUS_ADDRESS=/dev/null
 
 RUN apt-get update && apt-get install locales xvfb -yqq
