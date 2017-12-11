@@ -3,8 +3,8 @@ MAINTAINER Damian Baćkowski <damianbackowski@gmail.com>
 
 ENV PHANTOMJS_VERSION 2.1.1
 
-ENV CHROME_PACKAGE="google-chrome-stable_62.0.3202.94-1_amd64.deb"
-ENV NODE_VERSION 8.9.1
+ENV CHROME_PACKAGE="google-chrome-stable_63.0.3239.84-1_amd64.deb"
+ENV NODE_VERSION 8.9.2
 ENV DBUS_SESSION_BUS_ADDRESS=/dev/null
 
 RUN apt-get update && apt-get install locales xvfb -yqq
