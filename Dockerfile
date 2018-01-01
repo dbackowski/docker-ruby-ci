@@ -1,4 +1,4 @@
-FROM ruby:2.4.3
+FROM ruby:2.5.0
 MAINTAINER Damian Baćkowski <damianbackowski@gmail.com>
 
 ENV PHANTOMJS_VERSION 2.1.1
