@@ -6,9 +6,9 @@ Dockerfile for CI (continuous integration) based on official ruby docker image.
 
 * xvfb
 * ruby (2.5.0)
-* nodejs (8.9.3)
+* nodejs (8.9.4)
 * phantomjs (2.1.1)
-* google chrome (63.0.3239.108)
+* google chrome (63.0.3239.132)
 
 Locale:
 
