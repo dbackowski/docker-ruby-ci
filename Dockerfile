@@ -3,7 +3,7 @@ MAINTAINER Damian Baćkowski <damianbackowski@gmail.com>
 
 ENV PHANTOMJS_VERSION 2.1.1
 
-ENV CHROME_PACKAGE="google-chrome-stable_64.0.3282.119-1_amd64.deb"
+ENV CHROME_PACKAGE="google-chrome-stable_64.0.3282.140-1_amd64.deb"
 ENV NODE_VERSION 8.9.4
 ENV DBUS_SESSION_BUS_ADDRESS=/dev/null
 
