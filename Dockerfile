@@ -2,7 +2,7 @@ FROM ruby:2.5.0
 MAINTAINER Damian Baćkowski <damianbackowski@gmail.com>
 
 ENV PHANTOMJS_VERSION 2.1.1
-ENV CHROME_PACKAGE="google-chrome-stable_65.0.3325.162-1_amd64.deb"
+ENV CHROME_PACKAGE="google-chrome-stable_65.0.3325.181-1_amd64.deb"
 ENV NODE_VERSION 8.10.0
 ENV DBUS_SESSION_BUS_ADDRESS=/dev/null
 ENV LANG en_US.UTF-8

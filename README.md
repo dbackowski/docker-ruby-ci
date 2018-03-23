@@ -8,7 +8,7 @@ Dockerfile for CI (continuous integration) based on official ruby docker image.
 * ruby (2.5.0)
 * nodejs (8.10.0)
 * phantomjs (2.1.1)
-* google chrome (65.0.3325.162)
+* google chrome (65.0.3325.181)
 
 Locale:
 
