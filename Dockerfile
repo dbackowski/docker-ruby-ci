@@ -1,9 +1,8 @@
 FROM ruby:2.5.0
 MAINTAINER Damian Baćkowski <damianbackowski@gmail.com>
 
-ENV PHANTOMJS_VERSION 2.1.1
 ENV CHROME_PACKAGE="google-chrome-stable_65.0.3325.181-1_amd64.deb"
-ENV NODE_VERSION 8.10.0
+ENV NODE_VERSION 8.11.0
 ENV DBUS_SESSION_BUS_ADDRESS=/dev/null
 ENV LANG en_US.UTF-8
 ENV LANGUAGE en_US:en
@@ -14,12 +13,6 @@ RUN apt-get update && apt-get install locales xvfb -yqq && \
     locale-gen en_US.UTF-8 && \
     rm /etc/localtime && ln -s /usr/share/zoneinfo/Europe/Warsaw /etc/localtime && \
     gem install bundler --no-rdoc --no-ri && \
-    mkdir -p /srv/var && \
-    curl -sSLO "https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-$PHANTOMJS_VERSION-linux-x86_64.tar.bz2" && \
-    tar -xjf "phantomjs-$PHANTOMJS_VERSION-linux-x86_64.tar.bz2" -C "/tmp" && \
-    rm -f "phantomjs-$PHANTOMJS_VERSION-linux-x86_64.tar.bz2" && \
-    mv "/tmp/phantomjs-$PHANTOMJS_VERSION-linux-x86_64/" /srv/var/phantomjs && \
-    ln -s /srv/var/phantomjs/bin/phantomjs /usr/bin/phantomjs && \
     wget https://github.com/webnicer/chrome-downloads/raw/master/x64.deb/${CHROME_PACKAGE} && \
     dpkg --unpack ${CHROME_PACKAGE} && \
     apt-get install -f -y && \
