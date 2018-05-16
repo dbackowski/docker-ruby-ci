@@ -1,7 +1,7 @@
 FROM ruby:2.5.1
 MAINTAINER Damian Baćkowski <damianbackowski@gmail.com>
 
-ENV CHROME_PACKAGE="google-chrome-stable_66.0.3359.170-1_amd64.deb"
+ENV CHROME_PACKAGE="google-chrome-stable_66.0.3359.181-1_amd64.deb"
 ENV NODE_VERSION 8.11.1
 ENV DBUS_SESSION_BUS_ADDRESS=/dev/null
 ENV LANG en_US.UTF-8
