@@ -1,8 +1,8 @@
 FROM ruby:2.5.1
 MAINTAINER Damian Baćkowski <damianbackowski@gmail.com>
 
-ENV CHROME_PACKAGE="google-chrome-stable_67.0.3396.79-1_amd64.deb"
-ENV NODE_VERSION 8.11.2
+ENV CHROME_PACKAGE="google-chrome-stable_67.0.3396.87-1_amd64.deb"
+ENV NODE_VERSION 8.11.3
 ENV DBUS_SESSION_BUS_ADDRESS=/dev/null
 ENV LANG en_US.UTF-8
 ENV LANGUAGE en_US:en
@@ -10,6 +10,7 @@ ENV LC_ALL en_US.UTF-8
 
 RUN apt-get update && apt-get install locales xvfb -yqq && \
     echo "en_US UTF-8" > /etc/locale.gen && \
+    echo 'gem: --no-ri --no-rdoc' > .gemrc && \
     locale-gen en_US.UTF-8 && \
     rm /etc/localtime && ln -s /usr/share/zoneinfo/Europe/Warsaw /etc/localtime && \
     gem install bundler --no-rdoc --no-ri && \
