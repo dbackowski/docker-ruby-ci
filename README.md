@@ -6,8 +6,8 @@ Dockerfile for CI (continuous integration) based on official ruby docker image.
 
 * xvfb
 * ruby (2.5.1)
-* nodejs (8.11.3)
-* google chrome (68.0.3440.84)
+* nodejs (8.11.4)
+* google chrome (69.0.3497.81)
 
 Locale:
 
