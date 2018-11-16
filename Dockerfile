@@ -1,8 +1,8 @@
 FROM ruby:2.5.3
 MAINTAINER Damian Baćkowski <damianbackowski@gmail.com>
 
-ENV CHROME_PACKAGE="google-chrome-stable_70.0.3538.67-1_amd64.deb"
-ENV NODE_VERSION 8.12.0
+ENV CHROME_PACKAGE="google-chrome-stable_70.0.3538.102-1_amd64.deb"
+ENV NODE_VERSION 10.13.0
 ENV DBUS_SESSION_BUS_ADDRESS=/dev/null
 ENV LANG en_US.UTF-8
 ENV LANGUAGE en_US:en
