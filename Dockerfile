@@ -1,8 +1,8 @@
 FROM ruby:2.5.3
 MAINTAINER Damian Baćkowski <damianbackowski@gmail.com>
 
-ENV CHROME_PACKAGE="google-chrome-stable_70.0.3538.110-1_amd64.deb"
-ENV NODE_VERSION 10.13.0
+ENV CHROME_PACKAGE="google-chrome-stable_71.0.3578.98-1_amd64.deb"
+ENV NODE_VERSION 10.14.2
 ENV DBUS_SESSION_BUS_ADDRESS=/dev/null
 ENV LANG en_US.UTF-8
 ENV LANGUAGE en_US:en
@@ -10,10 +10,10 @@ ENV LC_ALL en_US.UTF-8
 
 RUN apt-get update && apt-get install locales xvfb -yqq && \
     echo "en_US UTF-8" > /etc/locale.gen && \
-    echo 'gem: --no-ri --no-rdoc' > .gemrc && \
+    echo 'gem: -no-ri-no-rdoc' > .gemrc && \
     locale-gen en_US.UTF-8 && \
     rm /etc/localtime && ln -s /usr/share/zoneinfo/Europe/Warsaw /etc/localtime && \
-    gem install bundler --no-rdoc --no-ri && \
+    gem install bundler && \
     wget https://github.com/webnicer/chrome-downloads/raw/master/x64.deb/${CHROME_PACKAGE} && \
     dpkg --unpack ${CHROME_PACKAGE} && \
     apt-get install -f -y && \
