@@ -1,4 +1,4 @@
-FROM ruby:2.6.0
+FROM ruby:2.6.1
 MAINTAINER Damian Baćkowski <damianbackowski@gmail.com>
 
 ENV CHROME_PACKAGE="google-chrome-stable_72.0.3626.81-1_amd64.deb"
