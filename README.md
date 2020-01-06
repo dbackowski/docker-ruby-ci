@@ -5,9 +5,9 @@ Dockerfile for CI (continuous integration) based on official ruby docker image.
 ## What is included?
 
 * xvfb
-* ruby (2.6.5)
-* nodejs (12.13.0)
-* google chrome (78.0.3904.97)
+* ruby (2.7.0)
+* nodejs (12.14.0)
+* google chrome (79.0.3945.88)
 
 Locale:
 
@@ -20,5 +20,5 @@ Timezone: Europe/Warsaw
 ## Usage
 
 ```
-docker run damianbackowski/ruby-ci:2.6.5 [cmd]
+docker run damianbackowski/ruby-ci:2.7.0 [cmd]
 ```
